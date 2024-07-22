@@ -1,15 +1,22 @@
 package me.heeyeon.springbootdeveloper;
 
+import me.heeyeon.springbootdeveloper.study.Member;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
+
 @RestController
 public class TestController {
+    @Autowired
+    TestService testService;
     @GetMapping("/test")
-    public String test(){
-        return "hello heeyeon";
+    public List<Member> getAllMembers() {
+        List<Member> members = testService.getAllMembers();
+        return members;
     }
-
 }
 //http://localhost:8080/test
 //       현재 사용 중인 컴퓨터 ---포트번호 -----경로
