@@ -1,0 +1,38 @@
+ch4. test code (오전 8:57 2024-07-23)
+given-when-then 패턴의 테스트 코드의 예
+
+    @DisplayName("Save The New Menu.")
+    @Test
+    Public void saveNenuTest(){
+//given: 메뉴를 저장하기 위한 준비 과정 (Preparation for saving a menu)
+final String Name ="Americano"
+final int price ="2000";
+final Menu americano = new Menu(name, price);
+
+//when : 실제로 메뉴를 저장(Save the menu)
+final long saveId = menuService.save(americano);
+
+//then : 메뉴가 잘 추가되었는지 검증 (Verify that the menu was added successfully)
+final Menu savedMenu = menuService.findById(savedId).get();
+assertThat(saveMenu.getName()).isEqualTo(name);
+assertThat(saveMenu.getPrice()).isEqualTo(price);
+
+}
+
+    given-when-then
+- given: 테스트 실행을 준비하는 단계
+- when: 테스트를 진행하는 단계
+- then: 테스트 결과를 검증하는 단계
+
+
+오전 10:02 2024-07-23
+# chatGPT....
+Q. given-when-then 코드 분석을 물어봤을 때, AAA(Arrange-Act-Assert)패턴으로 인식
+A. 메뉴를 저장하는 서비스의 JUnit 테스트 케이스로 분석함
+Q. Given(준비)- When(실행)- Then(검증)/ AAA패턴과 given-when-then패턴은 다른 것인가?
+A. 테스트를 구조화하는 두 가지 방법임
+Arrange(준비)- Act(실행) - Assert (검증)
+
+    Arrange(준비):
+    Act(실행)
+    Assert (검증)
