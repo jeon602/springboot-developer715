@@ -14,3 +14,24 @@
 //- 사용 방법이 단순, 테스트 코드 작성시간이 적음
 //- 자동 실행, 자체 결과를 확인하고 즉각적인 피드백을 제공
 
+// p.103~
+// Public class JUnitTest {
+//@DisplayName( " 1 더하기 3은 4다 " )
+//@Test
+//   Public void junitFailedTest(){
+//	int a = 1;
+//	int b = 3;
+//	int sum = 4;
+//
+//	Assertions.assertEquals(sum, a+b); //실패하는 케이스
+//	}
+//}  #JUNIT은 테스트 케이스 하나라도 실패하면 전체 테스트를 실패한 것으로 본다.
+
+
+// @ Annotation
+// @BeforeAll 어노테이션
+// DB를 연결하거나 , 테스트 환경을 초기활 할 때 사용하는 어노테이션
+// **** 전체 테스트 실행 주기에서 한 번 만 호출되어야 하기 때문에 메소드를 static으로 선언해야 함
+
+// @BeforeEach 어노테이션
+// 객체를 초기화하거나 테스트에 필요한 값을 미리넣을 때 사용할 수 있음
